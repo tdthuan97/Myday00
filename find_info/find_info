@@ -1,0 +1,38 @@
+Your mission
+One of our agents managed to get sensitive information about the traitor inside INTEK, but she has gone missing and it's up to you to find that information on her laptop. Thankfully, you know that the info is hidden in the smallest file whose name contains at least one vowel.
+
+Your mission is to write a script find_info. It will print all files (including hidden ones) contained in the current directory, but showing only the files where the title contains a vowel. And finally they need to be sorted with the smallest file first.
+
+Those informations are critical, we're counting on you young recruit!
+
+Tips
+Take a careful look at the example to know what we consider a vowel.
+
+$ ls .
+[          cp         df         expr       launchctl  mkdir      pwd        sh         tcsh       zsh
+bash       csh        domainname find_info    link       mv         rcp        sleep      test
+cat        date       echo       kill       ln         pax        rm         stty       unlink
+chmod      dd         ed         ksh        ls         ps         rmdir      sync       wait4path
+
+$ ./find_info
+sleep
+find_info
+echo
+rmdir
+wait4path
+domainname
+mkdir
+kill
+link
+test
+expr
+cat
+unlink
+date
+chmod
+ed
+pax
+launchctl
+bash
+
+

@@ -1,0 +1,36 @@
+Your mission
+Our beloved INTEK is being attacked every night. We're suspecting the evil Pancake Corp to be behind this very cheap DDOS attack. We need some data to confirm our suspicion.
+
+Your mission is to write a script named intruders that:
+
+reads the file access.log
+prints, for each IP address, the number of connections from 18:00 to 05:00
+sorts from the fewer connections to higher connections.
+If two IPs have the same number of connections, sort them numerically from lower to higher. We consider that 10.0.0.1 < 10.0.0.2 < 10.0.1.1
+
+The format of each line is:
+
+n IP
+with n being the number of total connections and IP being the IP address.
+
+$ tail access.log
+66.249.73.210 - - [29/Jan/2018:04:08:53 +0100] "GET /robots.txt HTTP/1.1" 404 693 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.102.7.245 - - [29/Jan/2018:04:08:53 +0100] "GET /users/sign_in HTTP/1.1" 200 1684 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 Google Favicon"
+66.249.73.210 - - [29/Jan/2018:04:08:53 +0100] "GET /users/sign_in HTTP/1.1" 200 1684 "-" "Googlebot-Image/1.0"
+66.102.7.241 - - [29/Jan/2018:04:08:54 +0100] "GET /users/sign_in HTTP/1.1" 200 1679 "http://www.google.com/search" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+66.102.7.241 - - [29/Jan/2018:04:08:54 +0100] "GET /favicon.ico HTTP/1.1" 200 0 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 Google Favicon"
+66.102.7.245 - - [29/Jan/2018:04:08:54 +0100] "GET /assets/logo-843035499f7a80775d887b083d2f1a1f.png HTTP/1.1" 200 17012 "https://intek.io/users/sign_in" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+66.102.7.243 - - [29/Jan/2018:04:08:54 +0100] "GET /images/uk.png HTTP/1.1" 200 12173 "https://intek.io/users/sign_in" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+66.102.7.241 - - [29/Jan/2018:04:08:54 +0100] "GET /assets/application-9a2f8428b6b0135a2a253094a3c1ebd8.css HTTP/1.1" 200 274545 "https://intek.io/users/sign_in" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+66.102.7.241 - - [29/Jan/2018:04:08:54 +0100] "GET /assets/application-d9f90cb324f611e5c3eb5e8d9f518a29.js HTTP/1.1" 200 518584 "https://intek.io/users/sign_in" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+66.102.7.241 - - [29/Jan/2018:04:08:55 +0100] "GET /users/sign_in HTTP/1.1" 200 1682 "https://intek.io/users/sign_in" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) Chrome/41.0.2272.118 Safari/537.36"
+
+$ ./intruders
+5 104.233.73.171
+5 184.162.160.33
+61 91.200.12.64
+72 5.194.136.89
+90 77.207.191.133
+11000 1.46.139.151
+
+
